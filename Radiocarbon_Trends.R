@@ -82,7 +82,8 @@ for (i in 1:nrow(alldata)){
   #meangde[,1+i]<-paste("gde",i,sep="")
   dates<-calibrate(x=alldata$uncal_age[i],errors=alldata$uncal_err[i],calCurves='intcal20',verbose=F)
   
-  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend1=alldata$trend1[i]*dates$grids$"1"$PrDens) 
+  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend1=alldata$trend1[i])
+                #*dates$grids$"1"$PrDens) 
   meantrend<-merge(meantrend,x,by="yearBP",all=T)
   
   #above i multiply the probability of the density function by gde as a weight of how likely that year is.
@@ -103,7 +104,8 @@ for (i in 1:nrow(alldata)){
   #meangde[,1+i]<-paste("gde",i,sep="")
   dates<-calibrate(x=alldata$uncal_age[i],errors=alldata$uncal_err[i],calCurves='intcal20',verbose=F)
   
-  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend2=alldata$trend2[i]*dates$grids$"1"$PrDens) 
+  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend2=alldata$trend2[i])
+                #*dates$grids$"1"$PrDens) 
   meantrend<-merge(meantrend,x,by="yearBP",all=T)
   
   #above i multiply the probability of the density function by gde as a weight of how likely that year is.
@@ -125,7 +127,8 @@ for (i in 1:nrow(alldata)){
   #meangde[,1+i]<-paste("gde",i,sep="")
   dates<-calibrate(x=alldata$uncal_age[i],errors=alldata$uncal_err[i],calCurves='intcal20',verbose=F)
   
-  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend3=alldata$trend3[i]*dates$grids$"1"$PrDens) 
+  x<-data.frame(yearBP=dates$grids$'1'$calBP,trend3=alldata$trend3[i])
+                #*dates$grids$"1"$PrDens) 
   meantrend<-merge(meantrend,x,by="yearBP",all=T)
   
   #above i multiply the probability of the density function by gde as a weight of how likely that year is.
